@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-31T17:05:23.003435",
+  "generated": "2026-03-31T13:24:09.372256",
   "version": "V5",
   "mode": "live",
   "stats": {
@@ -934,43 +934,51 @@
       "name": "Apex 01",
       "type": "apex",
       "target": 3000,
-      "current": -62,
+      "current": -610,
       "status": "eval"
     },
     {
       "name": "Apex 02",
       "type": "apex",
       "target": 3000,
-      "current": -63,
+      "current": -610,
       "status": "eval"
     },
     {
       "name": "Apex 03",
       "type": "apex",
       "target": 3000,
-      "current": -66,
+      "current": -610,
       "status": "eval"
     },
     {
       "name": "Lucid 01",
       "type": "lucid",
       "target": 3000,
-      "current": 0,
+      "current": -610,
       "status": "eval"
     },
     {
       "name": "Lucid 02",
       "type": "lucid",
       "target": 3000,
-      "current": -70,
+      "current": -610,
       "status": "eval"
     },
     {
       "name": "Lucid 03",
       "type": "lucid",
       "target": 3000,
-      "current": -65,
+      "current": -610,
       "status": "eval"
     }
-  ]
+  ],
+  "live": {
+    "trades": 1,
+    "total_pnl": -3660.0,
+    "days_traded": 1,
+    "days_green": 0,
+    "days_red": 1,
+    "last_update": "2026-03-31T13:24:09.372256"
+  }
 }
