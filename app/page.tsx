@@ -1,6 +1,7 @@
 import dashboardData from "../public/data.json";
 import EquityCurve from "../components/EquityCurve";
 import DailyPnL from "../components/DailyPnL";
+import ModeSwitch from "../components/ModeSwitch";
 
 const s = dashboardData.stats;
 
@@ -75,13 +76,10 @@ export default function Home() {
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">FSTMODEL V4</h1>
+          <h1 className="text-3xl font-bold tracking-tight">FSTMODEL</h1>
           <p className="text-gray-500 text-sm mt-1">Algorithmic MNQ Futures Trading</p>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-sm text-green-400">Paper Trading</span>
-        </div>
+        <ModeSwitch />
       </div>
 
       {/* Stats Grid */}
@@ -125,9 +123,10 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="text-center text-xs text-gray-600 py-4 border-t border-[#181818]">
-        <p>Powered by Claude Code + NinjaTrader 8 + Rithmic</p>
-        <p className="mt-1">Session: NY 09:30-11:00 ET | MNQ Micro Nasdaq Futures</p>
+      <footer className="text-center text-xs text-gray-600 py-6 border-t border-[#181818]">
+        <p>Powered by Claude Code & Facundo Garcia</p>
+        <p className="mt-2">Contacto: facugarcia656@gmail.com</p>
+        <p className="mt-3 text-[10px] text-gray-700">v1.00</p>
       </footer>
     </main>
   );

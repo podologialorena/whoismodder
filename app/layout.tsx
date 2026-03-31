@@ -5,7 +5,7 @@ import "./globals.css";
 const mono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FSTMODEL V4 — Algorithmic MNQ Trading",
+  title: "FSTMODEL — Algorithmic MNQ Trading",
   description: "Live track record of an institutional sweep-based MNQ futures trading bot. Walk-forward validated PF 3.24x.",
 };
 
