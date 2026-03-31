@@ -1,6 +1,7 @@
 {
   "generated": "2026-03-31T02:23:48.696316",
   "version": "V4",
+  "mode": "paper",
   "stats": {
     "pf": 2.64,
     "winRate": 0.7,
@@ -1109,7 +1110,7 @@
       "name": "Lucid 01",
       "type": "lucid",
       "target": 3000,
-      "current": 0,
+      "current": 701,
       "status": "eval"
     },
     {

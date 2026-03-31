@@ -1,7 +1,7 @@
 import dashboardData from "../public/data.json";
 import EquityCurve from "../components/EquityCurve";
 import DailyPnL from "../components/DailyPnL";
-import ModeSwitch from "../components/ModeSwitch";
+import StatusBadge from "../components/StatusBadge";
 
 const s = dashboardData.stats;
 
@@ -51,9 +51,11 @@ function MonthlyTable() {
   );
 }
 
-function AccountCard({ name, type, status }: { name: string; type: string; status: string }) {
+function AccountCard({ name, type, status, current, target }: { name: string; type: string; status: string; current: number; target: number }) {
   const color = type === "lucid" ? "text-purple-400" : "text-blue-400";
   const bg = type === "lucid" ? "bg-purple-400" : "bg-blue-400";
+  const pct = target > 0 ? Math.min((current / target) * 100, 100) : 0;
+  const pnlColor = current > 0 ? "text-green-400" : current < 0 ? "text-red-400" : "text-gray-500";
   return (
     <div className="bg-[#111] rounded-lg p-3 border border-[#222]">
       <div className="flex justify-between items-center">
@@ -61,9 +63,12 @@ function AccountCard({ name, type, status }: { name: string; type: string; statu
         <span className="text-xs text-gray-500 uppercase">{status}</span>
       </div>
       <div className="mt-2 w-full bg-[#222] rounded-full h-1.5">
-        <div className={`${bg} h-1.5 rounded-full`} style={{ width: "0%" }} />
+        <div className={`${bg} h-1.5 rounded-full transition-all duration-500`} style={{ width: `${pct}%` }} />
       </div>
-      <div className="text-xs text-gray-600 mt-1">$0 / $3,000</div>
+      <div className="flex justify-between mt-1">
+        <span className={`text-xs ${pnlColor}`}>${current.toLocaleString()}</span>
+        <span className="text-xs text-gray-600">/ ${target.toLocaleString()}</span>
+      </div>
     </div>
   );
 }
@@ -79,7 +84,7 @@ export default function Home() {
           <h1 className="text-3xl font-bold tracking-tight">FSTMODEL</h1>
           <p className="text-gray-500 text-sm mt-1">Algorithmic MNQ Futures Trading</p>
         </div>
-        <ModeSwitch />
+        <StatusBadge mode={dashboardData.mode ?? "paper"} />
       </div>
 
       {/* Stats Grid */}
@@ -117,7 +122,7 @@ export default function Home() {
         <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Prop Firm Accounts</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {dashboardData.accounts.map((a) => (
-            <AccountCard key={a.name} name={a.name} type={a.type} status={a.status} />
+            <AccountCard key={a.name} name={a.name} type={a.type} status={a.status} current={a.current} target={a.target} />
           ))}
         </div>
       </div>
