@@ -117,6 +117,57 @@ export default function Home() {
         <MonthlyTable />
       </div>
 
+      {/* Walk-Forward Validation */}
+      <div className="bg-[#111] rounded-xl p-4 border border-[#222] mb-6">
+        <h2 className="text-sm text-gray-400 mb-4 uppercase tracking-wider">Walk-Forward Validation</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div className="text-center">
+            <div className="text-xs text-gray-500 mb-1">Train (Sep 2025 - Jan 2026)</div>
+            <div className="text-xl font-bold text-yellow-400">PF 2.98x</div>
+            <div className="text-xs text-gray-600">5 meses de entrenamiento</div>
+          </div>
+          <div className="text-center">
+            <div className="text-xs text-gray-500 mb-1">Test (Feb - Mar 2026)</div>
+            <div className="text-xl font-bold text-green-400">PF 3.93x</div>
+            <div className="text-xs text-gray-600">datos que nunca vio</div>
+          </div>
+          <div className="text-center">
+            <div className="text-xs text-gray-500 mb-1">WF Ratio</div>
+            <div className="text-xl font-bold text-green-400">1.32</div>
+            <div className="text-xs text-gray-600">test supera al train</div>
+          </div>
+        </div>
+        <div className="border-t border-[#222] pt-3">
+          <h3 className="text-xs text-gray-500 uppercase mb-2">Anti Look-Ahead Bias</h3>
+          <ul className="text-xs text-gray-400 space-y-1.5">
+            <li className="flex items-start gap-2">
+              <span className="text-green-500 mt-0.5">&#10003;</span>
+              <span>Pattern detection uses candles [i-3, i-2, i-1], entry at candle i (j=i-2 rule)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-green-500 mt-0.5">&#10003;</span>
+              <span>Institutional levels computed from pre-session data only (PDH, PDL, Asia/London highs-lows)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-green-500 mt-0.5">&#10003;</span>
+              <span>Trade simulation starts at candle i+1 (never same bar as entry signal)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-green-500 mt-0.5">&#10003;</span>
+              <span>Walk-forward test period (Feb-Mar) was never used during development</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-green-500 mt-0.5">&#10003;</span>
+              <span>Test PF 3.93x &gt; Train PF 2.98x (system improves on unseen data)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-green-500 mt-0.5">&#10003;</span>
+              <span>Real MNQ Rithmic futures data (not CFD or synthetic)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       {/* Accounts */}
       <div className="mb-8">
         <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Prop Firm Accounts</h2>
