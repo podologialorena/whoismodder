@@ -89,7 +89,7 @@ export default function Home() {
 
       {/* Stats Grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-        <StatCard label="Profit Factor" value={`${s.pf}x`} sub="Walk-forward validated" />
+        <StatCard label="Profit Factor" value={`${s.pf}x`} sub="3.99x con tiers (WF 1.32)" />
         <StatCard label="Win Rate" value={`${winRate}%`} sub={`${s.tp}TP ${s.sl}SL ${s.pa}PA`} />
         <StatCard label="Total P&L" value={`+${s.totalPnlTicks}t`} sub={`$${s.totalPnlUsd.toLocaleString()}`} />
         <StatCard label="Entries" value={`${s.entries}`} sub={`${s.tradingDays} trading days`} />

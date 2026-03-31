@@ -1,509 +1,414 @@
 {
-  "generated": "2026-03-31T02:23:48.696316",
-  "version": "V4",
-  "mode": "paper",
+  "generated": "2026-03-31T17:05:23.003435",
+  "version": "V5",
+  "mode": "live",
   "stats": {
-    "pf": 2.64,
-    "winRate": 0.7,
-    "totalPnlTicks": 3279.8,
-    "totalPnlUsd": 6560.0,
-    "entries": 270,
-    "tp": 98,
-    "sl": 55,
-    "pa": 91,
-    "avgWin": 28.0,
-    "avgLoss": -36.5,
-    "slMin": 25,
-    "tradingDays": 111,
+    "pf": 3.24,
+    "winRate": 0.81,
+    "totalPnlTicks": 3242.6,
+    "totalPnlUsd": 6485.0,
+    "entries": 210,
+    "tp": 78,
+    "sl": 36,
+    "pa": 75,
+    "avgWin": 30.7,
+    "avgLoss": -40.2,
+    "tradingDays": 94,
     "monthsGreen": 7,
     "monthsRed": 0,
     "weeksGreen": 23,
     "weeksRed": 6,
-    "streak": 9,
-    "dateFrom": "2025-09-10",
+    "dateFrom": "2025-09-11",
     "dateTo": "2026-03-27"
   },
   "equity": [
     {
-      "date": "2025-09-10",
-      "equity": 6.2
-    },
-    {
       "date": "2025-09-11",
-      "equity": 3.0
-    },
-    {
-      "date": "2025-09-15",
-      "equity": -12.0
-    },
-    {
-      "date": "2025-09-16",
-      "equity": -48.0
-    },
-    {
-      "date": "2025-09-18",
-      "equity": -14.1
+      "equity": -32.2
     },
     {
       "date": "2025-09-19",
-      "equity": -2.8
-    },
-    {
-      "date": "2025-09-23",
-      "equity": -2.7
+      "equity": -18.8
     },
     {
       "date": "2025-09-25",
-      "equity": -17.8
-    },
-    {
-      "date": "2025-09-26",
-      "equity": -70.6
-    },
-    {
-      "date": "2025-09-29",
-      "equity": 0.6
+      "equity": -33.9
     },
     {
       "date": "2025-09-30",
-      "equity": 76.5
+      "equity": 56.3
     },
     {
       "date": "2025-10-01",
-      "equity": 151.9
+      "equity": 104.9
     },
     {
       "date": "2025-10-02",
-      "equity": 126.9
+      "equity": 74.9
     },
     {
       "date": "2025-10-03",
-      "equity": 259.6
+      "equity": 209.8
+    },
+    {
+      "date": "2025-10-06",
+      "equity": 230.4
     },
     {
       "date": "2025-10-08",
-      "equity": 257.1
+      "equity": 200.4
+    },
+    {
+      "date": "2025-10-09",
+      "equity": 196.8
     },
     {
       "date": "2025-10-13",
-      "equity": 227.0
+      "equity": 210.3
     },
     {
       "date": "2025-10-14",
-      "equity": 285.9
+      "equity": 278.4
     },
     {
       "date": "2025-10-16",
-      "equity": 384.1
+      "equity": 380.3
     },
     {
       "date": "2025-10-17",
-      "equity": 334.1
+      "equity": 502.9
     },
     {
       "date": "2025-10-21",
-      "equity": 394.1
+      "equity": 525.6
+    },
+    {
+      "date": "2025-10-22",
+      "equity": 607.3
     },
     {
       "date": "2025-10-23",
-      "equity": 464.7
+      "equity": 676.1
     },
     {
       "date": "2025-10-24",
-      "equity": 486.7
+      "equity": 675.1
     },
     {
       "date": "2025-10-27",
-      "equity": 504.0
+      "equity": 692.3
     },
     {
       "date": "2025-10-29",
-      "equity": 528.1
+      "equity": 715.9
     },
     {
       "date": "2025-10-30",
-      "equity": 537.8
+      "equity": 728.6
     },
     {
       "date": "2025-10-31",
-      "equity": 569.5
+      "equity": 755.3
     },
     {
       "date": "2025-11-03",
-      "equity": 572.2
-    },
-    {
-      "date": "2025-11-05",
-      "equity": 590.7
+      "equity": 770.2
     },
     {
       "date": "2025-11-06",
-      "equity": 573.5
-    },
-    {
-      "date": "2025-11-07",
-      "equity": 548.5
+      "equity": 829.3
     },
     {
       "date": "2025-11-11",
-      "equity": 486.3
+      "equity": 827.7
     },
     {
       "date": "2025-11-12",
-      "equity": 600.1
+      "equity": 941.4
     },
     {
       "date": "2025-11-13",
-      "equity": 683.2
+      "equity": 1024.6
     },
     {
       "date": "2025-11-14",
-      "equity": 773.4
+      "equity": 1073.5
     },
     {
       "date": "2025-11-17",
-      "equity": 945.2
+      "equity": 1249.6
     },
     {
       "date": "2025-11-18",
-      "equity": 920.2
+      "equity": 1219.6
     },
     {
       "date": "2025-11-19",
-      "equity": 992.7
-    },
-    {
-      "date": "2025-11-20",
-      "equity": 1066.6
+      "equity": 1292.0
     },
     {
       "date": "2025-11-21",
-      "equity": 1208.5
+      "equity": 1433.9
     },
     {
       "date": "2025-11-25",
-      "equity": 1140.9
-    },
-    {
-      "date": "2025-11-26",
-      "equity": 1171.5
+      "equity": 1414.5
     },
     {
       "date": "2025-11-28",
-      "equity": 1258.4
+      "equity": 1501.4
     },
     {
       "date": "2025-12-01",
-      "equity": 1307.2
+      "equity": 1515.1
     },
     {
       "date": "2025-12-02",
-      "equity": 1422.1
+      "equity": 1486.9
     },
     {
       "date": "2025-12-03",
-      "equity": 1420.4
+      "equity": 1486.0
     },
     {
       "date": "2025-12-04",
-      "equity": 1399.2
+      "equity": 1464.7
     },
     {
       "date": "2025-12-05",
-      "equity": 1441.0
+      "equity": 1523.5
     },
     {
       "date": "2025-12-08",
-      "equity": 1414.1
+      "equity": 1496.5
     },
     {
       "date": "2025-12-09",
-      "equity": 1411.6
+      "equity": 1497.1
     },
     {
       "date": "2025-12-10",
-      "equity": 1495.3
+      "equity": 1585.3
     },
     {
       "date": "2025-12-11",
-      "equity": 1441.5
+      "equity": 1525.3
     },
     {
       "date": "2025-12-12",
-      "equity": 1452.8
+      "equity": 1538.8
     },
     {
       "date": "2025-12-15",
-      "equity": 1467.9
+      "equity": 1584.5
     },
     {
       "date": "2025-12-16",
-      "equity": 1562.0
+      "equity": 1680.8
     },
     {
       "date": "2025-12-17",
-      "equity": 1733.6
+      "equity": 1852.4
     },
     {
       "date": "2025-12-22",
-      "equity": 1708.6
+      "equity": 1822.4
     },
     {
       "date": "2025-12-23",
-      "equity": 1718.5
+      "equity": 1789.2
     },
     {
       "date": "2025-12-24",
-      "equity": 1734.2
+      "equity": 1804.9
     },
     {
       "date": "2025-12-26",
-      "equity": 1755.5
+      "equity": 1822.7
     },
     {
       "date": "2025-12-29",
-      "equity": 1711.5
+      "equity": 1812.4
     },
     {
       "date": "2025-12-30",
-      "equity": 1692.8
+      "equity": 1798.7
     },
     {
       "date": "2025-12-31",
-      "equity": 1694.5
-    },
-    {
-      "date": "2026-01-05",
-      "equity": 1765.3
-    },
-    {
-      "date": "2026-01-07",
-      "equity": 1709.0
+      "equity": 1827.7
     },
     {
       "date": "2026-01-08",
-      "equity": 1798.3
+      "equity": 1849.0
     },
     {
       "date": "2026-01-09",
-      "equity": 1793.3
-    },
-    {
-      "date": "2026-01-12",
-      "equity": 1814.6
+      "equity": 1819.0
     },
     {
       "date": "2026-01-13",
-      "equity": 1889.2
-    },
-    {
-      "date": "2026-01-14",
-      "equity": 1904.8
+      "equity": 1889.3
     },
     {
       "date": "2026-01-16",
-      "equity": 1876.0
+      "equity": 1865.1
     },
     {
       "date": "2026-01-19",
-      "equity": 1894.0
+      "equity": 1885.3
     },
     {
       "date": "2026-01-20",
-      "equity": 1992.8
+      "equity": 1985.7
     },
     {
       "date": "2026-01-21",
-      "equity": 1987.8
-    },
-    {
-      "date": "2026-01-23",
-      "equity": 2055.5
-    },
-    {
-      "date": "2026-01-26",
-      "equity": 2030.5
-    },
-    {
-      "date": "2026-01-27",
-      "equity": 2039.3
-    },
-    {
-      "date": "2026-01-28",
       "equity": 1996.5
     },
     {
+      "date": "2026-01-23",
+      "equity": 2066.6
+    },
+    {
+      "date": "2026-01-27",
+      "equity": 2075.1
+    },
+    {
+      "date": "2026-01-28",
+      "equity": 2015.1
+    },
+    {
       "date": "2026-01-29",
-      "equity": 2051.5
+      "equity": 2063.7
     },
     {
       "date": "2026-01-30",
-      "equity": 2076.6
+      "equity": 2088.7
     },
     {
       "date": "2026-02-02",
-      "equity": 2051.8
+      "equity": 2058.7
     },
     {
       "date": "2026-02-03",
-      "equity": 2160.8
-    },
-    {
-      "date": "2026-02-04",
-      "equity": 2188.8
+      "equity": 2165.0
     },
     {
       "date": "2026-02-05",
-      "equity": 2259.9
+      "equity": 2236.1
     },
     {
       "date": "2026-02-06",
-      "equity": 2272.1
+      "equity": 2222.1
     },
     {
       "date": "2026-02-11",
-      "equity": 2397.2
+      "equity": 2349.5
     },
     {
       "date": "2026-02-12",
-      "equity": 2432.9
+      "equity": 2385.2
     },
     {
       "date": "2026-02-13",
-      "equity": 2400.6
+      "equity": 2384.6
     },
     {
       "date": "2026-02-16",
-      "equity": 2355.4
+      "equity": 2339.3
     },
     {
       "date": "2026-02-17",
-      "equity": 2424.0
-    },
-    {
-      "date": "2026-02-19",
-      "equity": 2462.2
+      "equity": 2399.9
     },
     {
       "date": "2026-02-20",
-      "equity": 2550.5
+      "equity": 2466.0
     },
     {
       "date": "2026-02-23",
-      "equity": 2651.8
+      "equity": 2567.3
     },
     {
       "date": "2026-02-24",
-      "equity": 2638.1
+      "equity": 2550.8
     },
     {
       "date": "2026-02-26",
-      "equity": 2616.6
+      "equity": 2606.9
     },
     {
       "date": "2026-02-27",
-      "equity": 2706.6
-    },
-    {
-      "date": "2026-03-02",
-      "equity": 2717.9
+      "equity": 2698.9
     },
     {
       "date": "2026-03-03",
-      "equity": 2667.4
+      "equity": 2638.9
     },
     {
       "date": "2026-03-05",
-      "equity": 2737.5
+      "equity": 2704.6
     },
     {
       "date": "2026-03-06",
-      "equity": 2800.6
+      "equity": 2767.7
     },
     {
       "date": "2026-03-09",
-      "equity": 2868.5
+      "equity": 2837.8
     },
     {
       "date": "2026-03-10",
-      "equity": 2867.5
+      "equity": 2867.9
     },
     {
       "date": "2026-03-11",
-      "equity": 2940.3
+      "equity": 2933.7
     },
     {
       "date": "2026-03-13",
-      "equity": 3024.1
-    },
-    {
-      "date": "2026-03-16",
-      "equity": 3027.1
+      "equity": 3020.4
     },
     {
       "date": "2026-03-17",
-      "equity": 3008.8
+      "equity": 2984.9
     },
     {
       "date": "2026-03-18",
-      "equity": 3019.3
+      "equity": 2971.8
     },
     {
       "date": "2026-03-23",
-      "equity": 2984.4
+      "equity": 2962.4
     },
     {
       "date": "2026-03-24",
-      "equity": 3078.6
+      "equity": 3050.2
     },
     {
       "date": "2026-03-25",
-      "equity": 3178.9
+      "equity": 3142.5
     },
     {
       "date": "2026-03-26",
-      "equity": 3226.9
+      "equity": 3190.5
     },
     {
       "date": "2026-03-27",
-      "equity": 3279.8
+      "equity": 3242.6
     }
   ],
   "daily": [
     {
-      "date": "2025-09-10",
-      "pnl": 6.2,
-      "entries": 2
-    },
-    {
       "date": "2025-09-11",
-      "pnl": -3.2,
+      "pnl": -32.2,
       "entries": 3
-    },
-    {
-      "date": "2025-09-15",
-      "pnl": -15.0,
-      "entries": 1
-    },
-    {
-      "date": "2025-09-16",
-      "pnl": -36.0,
-      "entries": 3
-    },
-    {
-      "date": "2025-09-18",
-      "pnl": 33.9,
-      "entries": 2
     },
     {
       "date": "2025-09-19",
-      "pnl": 11.2,
+      "pnl": 13.5,
       "entries": 1
-    },
-    {
-      "date": "2025-09-23",
-      "pnl": 0.2,
-      "entries": 3
     },
     {
       "date": "2025-09-25",
@@ -511,73 +416,78 @@
       "entries": 2
     },
     {
-      "date": "2025-09-26",
-      "pnl": -52.8,
-      "entries": 1
-    },
-    {
-      "date": "2025-09-29",
-      "pnl": 71.2,
-      "entries": 3
-    },
-    {
       "date": "2025-09-30",
-      "pnl": 76.0,
+      "pnl": 90.2,
       "entries": 3
     },
     {
       "date": "2025-10-01",
-      "pnl": 75.3,
-      "entries": 3
+      "pnl": 48.6,
+      "entries": 2
     },
     {
       "date": "2025-10-02",
-      "pnl": -25.0,
+      "pnl": -30.0,
       "entries": 1
     },
     {
       "date": "2025-10-03",
-      "pnl": 132.7,
+      "pnl": 134.9,
       "entries": 3
+    },
+    {
+      "date": "2025-10-06",
+      "pnl": 20.6,
+      "entries": 1
     },
     {
       "date": "2025-10-08",
-      "pnl": -2.5,
-      "entries": 3
+      "pnl": -30.0,
+      "entries": 1
     },
     {
-      "date": "2025-10-13",
-      "pnl": -30.0,
+      "date": "2025-10-09",
+      "pnl": -3.6,
       "entries": 2
     },
     {
+      "date": "2025-10-13",
+      "pnl": 13.5,
+      "entries": 1
+    },
+    {
       "date": "2025-10-14",
-      "pnl": 58.9,
+      "pnl": 68.1,
       "entries": 3
     },
     {
       "date": "2025-10-16",
-      "pnl": 98.1,
+      "pnl": 101.9,
       "entries": 3
     },
     {
       "date": "2025-10-17",
-      "pnl": -50.0,
-      "entries": 2
-    },
-    {
-      "date": "2025-10-21",
-      "pnl": 60.0,
+      "pnl": 122.6,
       "entries": 3
     },
     {
+      "date": "2025-10-21",
+      "pnl": 22.7,
+      "entries": 3
+    },
+    {
+      "date": "2025-10-22",
+      "pnl": 81.7,
+      "entries": 1
+    },
+    {
       "date": "2025-10-23",
-      "pnl": 70.7,
+      "pnl": 68.8,
       "entries": 3
     },
     {
       "date": "2025-10-24",
-      "pnl": 22.0,
+      "pnl": -1.0,
       "entries": 3
     },
     {
@@ -587,47 +497,37 @@
     },
     {
       "date": "2025-10-29",
-      "pnl": 24.1,
+      "pnl": 23.6,
       "entries": 3
     },
     {
       "date": "2025-10-30",
-      "pnl": 9.7,
+      "pnl": 12.6,
       "entries": 3
     },
     {
       "date": "2025-10-31",
-      "pnl": 31.7,
+      "pnl": 26.7,
       "entries": 3
     },
     {
       "date": "2025-11-03",
-      "pnl": 2.7,
+      "pnl": 14.9,
       "entries": 3
-    },
-    {
-      "date": "2025-11-05",
-      "pnl": 18.4,
-      "entries": 1
     },
     {
       "date": "2025-11-06",
-      "pnl": -17.2,
-      "entries": 3
-    },
-    {
-      "date": "2025-11-07",
-      "pnl": -25.0,
+      "pnl": 59.1,
       "entries": 1
     },
     {
       "date": "2025-11-11",
-      "pnl": -62.2,
-      "entries": 2
+      "pnl": -1.7,
+      "entries": 3
     },
     {
       "date": "2025-11-12",
-      "pnl": 113.9,
+      "pnl": 113.8,
       "entries": 3
     },
     {
@@ -637,17 +537,17 @@
     },
     {
       "date": "2025-11-14",
-      "pnl": 90.2,
+      "pnl": 48.9,
       "entries": 3
     },
     {
       "date": "2025-11-17",
-      "pnl": 171.8,
+      "pnl": 176.1,
       "entries": 3
     },
     {
       "date": "2025-11-18",
-      "pnl": -25.0,
+      "pnl": -30.0,
       "entries": 1
     },
     {
@@ -656,24 +556,14 @@
       "entries": 3
     },
     {
-      "date": "2025-11-20",
-      "pnl": 74.0,
-      "entries": 2
-    },
-    {
       "date": "2025-11-21",
       "pnl": 141.9,
       "entries": 3
     },
     {
       "date": "2025-11-25",
-      "pnl": -67.7,
-      "entries": 3
-    },
-    {
-      "date": "2025-11-26",
-      "pnl": 30.6,
-      "entries": 1
+      "pnl": -19.4,
+      "entries": 2
     },
     {
       "date": "2025-11-28",
@@ -682,17 +572,17 @@
     },
     {
       "date": "2025-12-01",
-      "pnl": 48.8,
-      "entries": 2
+      "pnl": 13.7,
+      "entries": 1
     },
     {
       "date": "2025-12-02",
-      "pnl": 114.9,
-      "entries": 3
+      "pnl": -28.3,
+      "entries": 2
     },
     {
       "date": "2025-12-03",
-      "pnl": -1.7,
+      "pnl": -0.9,
       "entries": 3
     },
     {
@@ -702,7 +592,7 @@
     },
     {
       "date": "2025-12-05",
-      "pnl": 41.8,
+      "pnl": 58.8,
       "entries": 3
     },
     {
@@ -712,32 +602,32 @@
     },
     {
       "date": "2025-12-09",
-      "pnl": -2.5,
+      "pnl": 0.6,
       "entries": 3
     },
     {
       "date": "2025-12-10",
-      "pnl": 83.7,
+      "pnl": 88.2,
       "entries": 3
     },
     {
       "date": "2025-12-11",
-      "pnl": -53.8,
+      "pnl": -60.0,
       "entries": 2
     },
     {
       "date": "2025-12-12",
-      "pnl": 11.2,
+      "pnl": 13.5,
       "entries": 1
     },
     {
       "date": "2025-12-15",
-      "pnl": 15.2,
-      "entries": 3
+      "pnl": 45.7,
+      "entries": 2
     },
     {
       "date": "2025-12-16",
-      "pnl": 94.1,
+      "pnl": 96.3,
       "entries": 3
     },
     {
@@ -747,13 +637,13 @@
     },
     {
       "date": "2025-12-22",
-      "pnl": -25.0,
-      "entries": 2
+      "pnl": -30.0,
+      "entries": 1
     },
     {
       "date": "2025-12-23",
-      "pnl": 9.9,
-      "entries": 3
+      "pnl": -33.2,
+      "entries": 2
     },
     {
       "date": "2025-12-24",
@@ -762,102 +652,77 @@
     },
     {
       "date": "2025-12-26",
-      "pnl": 21.4,
-      "entries": 2
+      "pnl": 17.8,
+      "entries": 1
     },
     {
       "date": "2025-12-29",
-      "pnl": -44.0,
-      "entries": 3
+      "pnl": -10.2,
+      "entries": 2
     },
     {
       "date": "2025-12-30",
-      "pnl": -18.8,
+      "pnl": -13.8,
       "entries": 3
     },
     {
       "date": "2025-12-31",
-      "pnl": 1.8,
-      "entries": 2
-    },
-    {
-      "date": "2026-01-05",
-      "pnl": 70.8,
-      "entries": 3
-    },
-    {
-      "date": "2026-01-07",
-      "pnl": -56.2,
-      "entries": 2
+      "pnl": 29.0,
+      "entries": 1
     },
     {
       "date": "2026-01-08",
-      "pnl": 89.2,
-      "entries": 3
-    },
-    {
-      "date": "2026-01-09",
-      "pnl": -5.0,
-      "entries": 3
-    },
-    {
-      "date": "2026-01-12",
       "pnl": 21.4,
       "entries": 1
     },
     {
-      "date": "2026-01-13",
-      "pnl": 74.6,
-      "entries": 3
-    },
-    {
-      "date": "2026-01-14",
-      "pnl": 15.5,
+      "date": "2026-01-09",
+      "pnl": -30.0,
       "entries": 1
     },
     {
+      "date": "2026-01-13",
+      "pnl": 70.3,
+      "entries": 3
+    },
+    {
       "date": "2026-01-16",
-      "pnl": -28.8,
+      "pnl": -24.2,
       "entries": 3
     },
     {
       "date": "2026-01-19",
-      "pnl": 17.9,
+      "pnl": 20.2,
       "entries": 1
     },
     {
       "date": "2026-01-20",
-      "pnl": 98.9,
+      "pnl": 100.4,
       "entries": 3
     },
     {
       "date": "2026-01-21",
-      "pnl": -5.1,
+      "pnl": 10.8,
       "entries": 3
     },
     {
       "date": "2026-01-23",
-      "pnl": 67.8,
+      "pnl": 70.0,
       "entries": 3
-    },
-    {
-      "date": "2026-01-26",
-      "pnl": -25.0,
-      "entries": 1
     },
     {
       "date": "2026-01-27",
-      "pnl": 8.8,
-      "entries": 2
+      "pnl": 8.5,
+      "entries": 1
     },
     {
       "date": "2026-01-28",
-      "pnl": -42.8,
-      "entries": 3
+      "pnl": -60.0,
+      "entries": 2
     },
     {
       "date": "2026-01-29",
-      "pnl": 54.9,
+      "pnl": 48.6,
       "entries": 3
     },
     {
@@ -867,18 +732,13 @@
     },
     {
       "date": "2026-02-02",
-      "pnl": -24.8,
-      "entries": 3
+      "pnl": -30.0,
+      "entries": 1
     },
     {
       "date": "2026-02-03",
-      "pnl": 109.0,
+      "pnl": 106.2,
       "entries": 3
-    },
-    {
-      "date": "2026-02-04",
-      "pnl": 28.0,
-      "entries": 1
     },
     {
       "date": "2026-02-05",
@@ -887,12 +747,12 @@
     },
     {
       "date": "2026-02-06",
-      "pnl": 12.1,
-      "entries": 2
+      "pnl": -14.0,
+      "entries": 1
     },
     {
       "date": "2026-02-11",
-      "pnl": 125.1,
+      "pnl": 127.4,
       "entries": 3
     },
     {
@@ -902,8 +762,8 @@
     },
     {
       "date": "2026-02-13",
-      "pnl": -32.2,
-      "entries": 3
+      "pnl": -0.6,
+      "entries": 2
     },
     {
       "date": "2026-02-16",
@@ -912,18 +772,13 @@
     },
     {
       "date": "2026-02-17",
-      "pnl": 68.6,
+      "pnl": 60.6,
       "entries": 3
-    },
-    {
-      "date": "2026-02-19",
-      "pnl": 38.2,
-      "entries": 1
     },
     {
       "date": "2026-02-20",
-      "pnl": 88.3,
-      "entries": 3
+      "pnl": 66.1,
+      "entries": 2
     },
     {
       "date": "2026-02-23",
@@ -932,32 +787,27 @@
     },
     {
       "date": "2026-02-24",
-      "pnl": -13.8,
+      "pnl": -16.5,
       "entries": 2
     },
     {
       "date": "2026-02-26",
-      "pnl": -21.5,
-      "entries": 3
+      "pnl": 56.1,
+      "entries": 2
     },
     {
       "date": "2026-02-27",
-      "pnl": 90.0,
-      "entries": 3
-    },
-    {
-      "date": "2026-03-02",
-      "pnl": 11.3,
+      "pnl": 92.0,
       "entries": 3
     },
     {
       "date": "2026-03-03",
-      "pnl": -50.5,
+      "pnl": -60.0,
       "entries": 2
     },
     {
       "date": "2026-03-05",
-      "pnl": 70.2,
+      "pnl": 65.7,
       "entries": 3
     },
     {
@@ -967,52 +817,47 @@
     },
     {
       "date": "2026-03-09",
-      "pnl": 67.8,
+      "pnl": 70.1,
       "entries": 2
     },
     {
       "date": "2026-03-10",
-      "pnl": -1.0,
-      "entries": 3
+      "pnl": 30.0,
+      "entries": 2
     },
     {
       "date": "2026-03-11",
-      "pnl": 72.8,
+      "pnl": 65.8,
       "entries": 3
     },
     {
       "date": "2026-03-13",
-      "pnl": 83.8,
+      "pnl": 86.7,
       "entries": 3
-    },
-    {
-      "date": "2026-03-16",
-      "pnl": 3.0,
-      "entries": 2
     },
     {
       "date": "2026-03-17",
-      "pnl": -18.2,
-      "entries": 3
+      "pnl": -35.5,
+      "entries": 2
     },
     {
       "date": "2026-03-18",
-      "pnl": 10.5,
-      "entries": 3
+      "pnl": -13.0,
+      "entries": 2
     },
     {
       "date": "2026-03-23",
-      "pnl": -35.0,
-      "entries": 3
+      "pnl": -9.5,
+      "entries": 2
     },
     {
       "date": "2026-03-24",
-      "pnl": 94.2,
+      "pnl": 87.8,
       "entries": 3
     },
     {
       "date": "2026-03-25",
-      "pnl": 100.4,
+      "pnl": 92.3,
       "entries": 3
     },
     {
@@ -1022,66 +867,66 @@
     },
     {
       "date": "2026-03-27",
-      "pnl": 52.9,
+      "pnl": 52.1,
       "entries": 2
     }
   ],
   "monthly": [
     {
       "month": "2025-09",
-      "pnl": 76.5,
-      "entries": 24,
-      "daysGreen": 6,
-      "daysRed": 5,
-      "pf": 1.32
+      "pnl": 56.3,
+      "pf": 1.61,
+      "entries": 9,
+      "daysGreen": 2,
+      "daysRed": 2
     },
     {
       "month": "2025-10",
-      "pnl": 493.0,
-      "entries": 39,
-      "daysGreen": 11,
-      "daysRed": 4,
-      "pf": 2.99
+      "pnl": 699.0,
+      "pf": 3.89,
+      "entries": 40,
+      "daysGreen": 14,
+      "daysRed": 4
     },
     {
       "month": "2025-11",
-      "pnl": 688.9,
-      "entries": 36,
-      "daysGreen": 11,
-      "daysRed": 5,
-      "pf": 3.48
+      "pnl": 746.1,
+      "pf": 6.05,
+      "entries": 29,
+      "daysGreen": 9,
+      "daysRed": 3
     },
     {
       "month": "2025-12",
-      "pnl": 436.1,
-      "entries": 50,
-      "daysGreen": 12,
-      "daysRed": 8,
-      "pf": 2.22
+      "pnl": 326.3,
+      "pf": 1.97,
+      "entries": 42,
+      "daysGreen": 11,
+      "daysRed": 9
     },
     {
       "month": "2026-01",
-      "pnl": 382.0,
-      "entries": 41,
-      "daysGreen": 11,
-      "daysRed": 6,
-      "pf": 2.25
+      "pnl": 261.1,
+      "pf": 2.11,
+      "entries": 27,
+      "daysGreen": 9,
+      "daysRed": 3
     },
     {
       "month": "2026-02",
-      "pnl": 630.0,
-      "entries": 38,
-      "daysGreen": 11,
-      "daysRed": 5,
-      "pf": 3.45
+      "pnl": 610.2,
+      "pf": 4.4,
+      "entries": 30,
+      "daysGreen": 9,
+      "daysRed": 5
     },
     {
       "month": "2026-03",
-      "pnl": 573.2,
-      "entries": 42,
-      "daysGreen": 12,
-      "daysRed": 4,
-      "pf": 2.78
+      "pnl": 543.7,
+      "pf": 3.54,
+      "entries": 33,
+      "daysGreen": 10,
+      "daysRed": 4
     }
   ],
   "accounts": [
@@ -1089,42 +934,42 @@
       "name": "Apex 01",
       "type": "apex",
       "target": 3000,
-      "current": 0,
+      "current": -62,
       "status": "eval"
     },
     {
       "name": "Apex 02",
       "type": "apex",
       "target": 3000,
-      "current": 0,
+      "current": -63,
       "status": "eval"
     },
     {
       "name": "Apex 03",
       "type": "apex",
       "target": 3000,
-      "current": 0,
+      "current": -66,
       "status": "eval"
     },
     {
       "name": "Lucid 01",
       "type": "lucid",
       "target": 3000,
-      "current": 701,
+      "current": 0,
       "status": "eval"
     },
     {
       "name": "Lucid 02",
       "type": "lucid",
       "target": 3000,
-      "current": 0,
+      "current": -70,
       "status": "eval"
     },
     {
       "name": "Lucid 03",
       "type": "lucid",
       "target": 3000,
-      "current": 0,
+      "current": -65,
       "status": "eval"
     }
   ]
