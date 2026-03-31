@@ -934,42 +934,42 @@
       "name": "Apex 01",
       "type": "apex",
       "target": 3000,
-      "current": -610,
+      "current": -62,
       "status": "eval"
     },
     {
       "name": "Apex 02",
       "type": "apex",
       "target": 3000,
-      "current": -610,
+      "current": -63,
       "status": "eval"
     },
     {
       "name": "Apex 03",
       "type": "apex",
       "target": 3000,
-      "current": -610,
+      "current": -66,
       "status": "eval"
     },
     {
       "name": "Lucid 01",
       "type": "lucid",
       "target": 3000,
-      "current": -610,
+      "current": 629,
       "status": "eval"
     },
     {
       "name": "Lucid 02",
       "type": "lucid",
       "target": 3000,
-      "current": -610,
+      "current": -70,
       "status": "eval"
     },
     {
       "name": "Lucid 03",
       "type": "lucid",
       "target": 3000,
-      "current": -610,
+      "current": -65,
       "status": "eval"
     }
   ],
