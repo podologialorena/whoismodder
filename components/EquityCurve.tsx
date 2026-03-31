@@ -4,7 +4,7 @@ import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "rec
 export default function EquityCurve({ data }: { data: { date: string; equity: number }[] }) {
   return (
     <div className="bg-[#111] rounded-xl p-4 border border-[#222]">
-      <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Equity Curve (ticks)</h2>
+      <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Curva de Equity (ticks)</h2>
       <ResponsiveContainer width="100%" height={300}>
         <AreaChart data={data}>
           <defs>

@@ -18,15 +18,15 @@ function StatCard({ label, value, sub }: { label: string; value: string; sub?: s
 function MonthlyTable() {
   return (
     <div className="bg-[#111] rounded-xl p-4 border border-[#222] overflow-x-auto">
-      <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Monthly Breakdown</h2>
+      <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Desglose Mensual</h2>
       <table className="w-full text-sm">
         <thead>
           <tr className="text-gray-500 border-b border-[#222]">
-            <th className="text-left py-2">Month</th>
+            <th className="text-left py-2">Mes</th>
             <th className="text-right py-2">P&L</th>
             <th className="text-right py-2">PF</th>
             <th className="text-right py-2">Entries</th>
-            <th className="text-right py-2">Days G/R</th>
+            <th className="text-right py-2">Dias V/R</th>
           </tr>
         </thead>
         <tbody>
@@ -39,7 +39,7 @@ function MonthlyTable() {
               <td className="text-right py-2">{m.pf}x</td>
               <td className="text-right py-2">{m.entries}</td>
               <td className="text-right py-2">
-                <span className="text-green-400">{m.daysGreen}G</span>
+                <span className="text-green-400">{m.daysGreen}V</span>
                 <span className="text-gray-600">/</span>
                 <span className="text-red-400">{m.daysRed}R</span>
               </td>
@@ -56,11 +56,12 @@ function AccountCard({ name, type, status, current, target }: { name: string; ty
   const bg = type === "lucid" ? "bg-purple-400" : "bg-blue-400";
   const pct = target > 0 ? Math.min((current / target) * 100, 100) : 0;
   const pnlColor = current > 0 ? "text-green-400" : current < 0 ? "text-red-400" : "text-gray-500";
+  const statusEs = status === "eval" ? "evaluacion" : status === "funded" ? "fondeada" : status;
   return (
     <div className="bg-[#111] rounded-lg p-3 border border-[#222]">
       <div className="flex justify-between items-center">
         <span className={`text-sm font-medium ${color}`}>{name}</span>
-        <span className="text-xs text-gray-500 uppercase">{status}</span>
+        <span className="text-xs text-gray-500 uppercase">{statusEs}</span>
       </div>
       <div className="mt-2 w-full bg-[#222] rounded-full h-1.5">
         <div className={`${bg} h-1.5 rounded-full transition-all duration-500`} style={{ width: `${pct}%` }} />
@@ -82,7 +83,7 @@ export default function Home() {
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">FSTMODEL</h1>
-          <p className="text-gray-500 text-sm mt-1">Algorithmic MNQ Futures Trading</p>
+          <p className="text-gray-500 text-sm mt-1">Trading algoritmico de futuros MNQ</p>
         </div>
         <StatusBadge mode={dashboardData.mode ?? "paper"} />
       </div>
@@ -90,16 +91,16 @@ export default function Home() {
       {/* Stats Grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
         <StatCard label="Profit Factor" value={`${s.pf}x`} sub="3.99x con tiers (WF 1.32)" />
-        <StatCard label="Win Rate" value={`${winRate}%`} sub={`${s.tp}TP ${s.sl}SL ${s.pa}PA`} />
-        <StatCard label="Total P&L" value={`+${s.totalPnlTicks}t`} sub={`$${s.totalPnlUsd.toLocaleString()}`} />
-        <StatCard label="Entries" value={`${s.entries}`} sub={`${s.tradingDays} trading days`} />
+        <StatCard label="Tasa de acierto" value={`${winRate}%`} sub={`${s.tp}TP ${s.sl}SL ${s.pa}PA`} />
+        <StatCard label="P&L Total" value={`+${s.totalPnlTicks}t`} sub={`$${s.totalPnlUsd.toLocaleString()}`} />
+        <StatCard label="Operaciones" value={`${s.entries}`} sub={`${s.tradingDays} dias operados`} />
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-        <StatCard label="Months" value={`${s.monthsGreen}G/${s.monthsRed}R`} sub="All months green" />
-        <StatCard label="Weeks" value={`${s.weeksGreen}G/${s.weeksRed}R`} />
-        <StatCard label="Avg Win" value={`+${s.avgWin}t`} sub={`Avg Loss: ${s.avgLoss}t`} />
-        <StatCard label="Period" value={`${s.dateFrom.slice(5)}`} sub={`to ${s.dateTo.slice(5)}`} />
+        <StatCard label="Meses" value={`${s.monthsGreen}V/${s.monthsRed}R`} sub="Todos los meses en verde" />
+        <StatCard label="Semanas" value={`${s.weeksGreen}V/${s.weeksRed}R`} />
+        <StatCard label="Ganancia prom." value={`+${s.avgWin}t`} sub={`Perdida prom: ${s.avgLoss}t`} />
+        <StatCard label="Periodo" value={`${s.dateFrom.slice(5)}`} sub={`al ${s.dateTo.slice(5)}`} />
       </div>
 
       {/* Equity Curve */}
@@ -119,50 +120,50 @@ export default function Home() {
 
       {/* Walk-Forward Validation */}
       <div className="bg-[#111] rounded-xl p-4 border border-[#222] mb-6">
-        <h2 className="text-sm text-gray-400 mb-4 uppercase tracking-wider">Walk-Forward Validation</h2>
+        <h2 className="text-sm text-gray-400 mb-4 uppercase tracking-wider">Validacion Walk-Forward</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           <div className="text-center">
-            <div className="text-xs text-gray-500 mb-1">Train (Sep 2025 - Jan 2026)</div>
+            <div className="text-xs text-gray-500 mb-1">Entrenamiento (Sep 2025 - Ene 2026)</div>
             <div className="text-xl font-bold text-yellow-400">PF 2.98x</div>
-            <div className="text-xs text-gray-600">5 meses de entrenamiento</div>
+            <div className="text-xs text-gray-600">5 meses de datos de entrenamiento</div>
           </div>
           <div className="text-center">
             <div className="text-xs text-gray-500 mb-1">Test (Feb - Mar 2026)</div>
             <div className="text-xl font-bold text-green-400">PF 3.93x</div>
-            <div className="text-xs text-gray-600">datos que nunca vio</div>
+            <div className="text-xs text-gray-600">datos que nunca vio el sistema</div>
           </div>
           <div className="text-center">
-            <div className="text-xs text-gray-500 mb-1">WF Ratio</div>
+            <div className="text-xs text-gray-500 mb-1">Ratio WF</div>
             <div className="text-xl font-bold text-green-400">1.32</div>
-            <div className="text-xs text-gray-600">test supera al train</div>
+            <div className="text-xs text-gray-600">el test supera al entrenamiento</div>
           </div>
         </div>
         <div className="border-t border-[#222] pt-3">
-          <h3 className="text-xs text-gray-500 uppercase mb-2">Anti Look-Ahead Bias</h3>
+          <h3 className="text-xs text-gray-500 uppercase mb-2">Sin Look-Ahead Bias</h3>
           <ul className="text-xs text-gray-400 space-y-1.5">
             <li className="flex items-start gap-2">
               <span className="text-green-500 mt-0.5">&#10003;</span>
-              <span>Pattern detection uses candles [i-3, i-2, i-1], entry at candle i (j=i-2 rule)</span>
+              <span>Deteccion de patrones usa velas [i-3, i-2, i-1], la entry es en la vela i (regla j=i-2)</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-500 mt-0.5">&#10003;</span>
-              <span>Institutional levels computed from pre-session data only (PDH, PDL, Asia/London highs-lows)</span>
+              <span>Niveles institucionales calculados solo con data pre-sesion (PDH, PDL, maximos/minimos de Asia y Londres)</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-500 mt-0.5">&#10003;</span>
-              <span>Trade simulation starts at candle i+1 (never same bar as entry signal)</span>
+              <span>La simulacion arranca en la vela i+1 (nunca en la misma barra que la senal)</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-500 mt-0.5">&#10003;</span>
-              <span>Walk-forward test period (Feb-Mar) was never used during development</span>
+              <span>El periodo de test (Feb-Mar) nunca se uso durante el desarrollo</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-500 mt-0.5">&#10003;</span>
-              <span>Test PF 3.93x &gt; Train PF 2.98x (system improves on unseen data)</span>
+              <span>PF en test 3.93x &gt; PF en train 2.98x (el sistema mejora con datos nuevos)</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-500 mt-0.5">&#10003;</span>
-              <span>Real MNQ Rithmic futures data (not CFD or synthetic)</span>
+              <span>Data real de futuros MNQ via Rithmic (no CFD ni sinteticos)</span>
             </li>
           </ul>
         </div>
@@ -170,7 +171,7 @@ export default function Home() {
 
       {/* Accounts */}
       <div className="mb-8">
-        <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Prop Firm Accounts</h2>
+        <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Cuentas Prop Firm</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {dashboardData.accounts.map((a) => (
             <AccountCard key={a.name} name={a.name} type={a.type} status={a.status} current={a.current} target={a.target} />

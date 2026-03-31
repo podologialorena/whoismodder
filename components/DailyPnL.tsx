@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 
 export default function DailyPnL({ data }: { data: { date: string; pnl: number }[] }) {
   return (
     <div className="bg-[#111] rounded-xl p-4 border border-[#222]">
-      <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Daily P&L (ticks)</h2>
+      <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">P&L Diario (ticks)</h2>
       <ResponsiveContainer width="100%" height={200}>
         <BarChart data={data}>
           <XAxis
