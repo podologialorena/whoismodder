@@ -51,17 +51,15 @@ function MonthlyTable() {
   );
 }
 
-function AccountCard({ name, type, status, current, target }: { name: string; type: string; status: string; current: number; target: number }) {
+function AccountCard({ name, type, current, target }: { name: string; type: string; status: string; current: number; target: number }) {
   const color = type === "lucid" ? "text-purple-400" : "text-blue-400";
   const bg = type === "lucid" ? "bg-purple-400" : "bg-blue-400";
   const pct = target > 0 ? Math.min((current / target) * 100, 100) : 0;
   const pnlColor = current > 0 ? "text-green-400" : current < 0 ? "text-red-400" : "text-gray-500";
-  const statusEs = status === "eval" ? "evaluacion" : status === "funded" ? "fondeada" : status;
   return (
     <div className="bg-[#111] rounded-lg p-3 border border-[#222]">
       <div className="flex justify-between items-center">
         <span className={`text-sm font-medium ${color}`}>{name}</span>
-        <span className="text-xs text-gray-500 uppercase">{statusEs}</span>
       </div>
       <div className="mt-2 w-full bg-[#222] rounded-full h-1.5">
         <div className={`${bg} h-1.5 rounded-full transition-all duration-500`} style={{ width: `${pct}%` }} />
@@ -82,8 +80,8 @@ export default function Home() {
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">FSTMODEL</h1>
-          <p className="text-gray-500 text-sm mt-1">Trading algoritmico de futuros MNQ</p>
+          <h1 className="text-3xl font-bold tracking-tight">V5.1</h1>
+          <p className="text-gray-500 text-sm mt-1">Trading algoritmico de futuros MNQ — nuevo motor de liquidez</p>
         </div>
         <StatusBadge mode={dashboardData.mode ?? "paper"} />
       </div>
@@ -170,12 +168,36 @@ export default function Home() {
       </div>
 
       {/* Accounts */}
-      <div className="mb-8">
-        <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Cuentas Prop Firm</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {dashboardData.accounts.map((a) => (
+      <div className="mb-6">
+        <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Cuentas abiertas en Apex</h2>
+        <div className="grid grid-cols-3 gap-3">
+          {dashboardData.accounts.filter((a: { type: string }) => a.type === "apex").map((a: { name: string; type: string; status: string; current: number; target: number }) => (
             <AccountCard key={a.name} name={a.name} type={a.type} status={a.status} current={a.current} target={a.target} />
           ))}
+        </div>
+      </div>
+      <div className="mb-8">
+        <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Cuentas abiertas en Lucid</h2>
+        <div className="grid grid-cols-3 gap-3">
+          {dashboardData.accounts.filter((a: { type: string }) => a.type === "lucid").map((a: { name: string; type: string; status: string; current: number; target: number }) => (
+            <AccountCard key={a.name} name={a.name} type={a.type} status={a.status} current={a.current} target={a.target} />
+          ))}
+        </div>
+      </div>
+
+      {/* Changelog */}
+      <div className="bg-[#111] rounded-xl p-4 border border-[#222] mb-6">
+        <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Changelog</h2>
+        <div className="text-xs text-gray-400 leading-relaxed">
+          <p className="mb-2">
+            <span className="text-gray-300 font-medium">2 Abril 2026 — V5.1: nuevo motor de liquidez</span>
+          </p>
+          <p>
+            V5 automatiza la estrategia de Facundo Garcia, desarrollada junto con Claude.
+            Hoy se activa V5.1, que suma un segundo motor basado en trampas de liquidez
+            entre sesiones (Londres y Nueva York). Ambos motores operan juntos de forma coordinada.
+            322 operaciones en 7 meses de prueba, 73% de acierto, todos los meses positivos.
+          </p>
         </div>
       </div>
 
@@ -183,7 +205,7 @@ export default function Home() {
       <footer className="text-center text-xs text-gray-600 py-6 border-t border-[#181818]">
         <p>Powered by Claude Code & Facundo Garcia</p>
         <p className="mt-2">Contacto: facugarcia656@gmail.com</p>
-        <p className="mt-3 text-[10px] text-gray-700">v1.00</p>
+        <p className="mt-3 text-[10px] text-gray-700">v5.1</p>
       </footer>
     </main>
   );

@@ -5,8 +5,8 @@ import "./globals.css";
 const mono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FSTMODEL — Algorithmic MNQ Trading",
-  description: "Live track record of an institutional sweep-based MNQ futures trading bot. Walk-forward validated PF 3.24x.",
+  title: "V5.1 — Algorithmic MNQ Trading",
+  description: "Live track record of V5.1: dual-engine MNQ futures trading system. Walk-forward validated, 73% win rate, all months green.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
