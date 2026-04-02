@@ -4,6 +4,8 @@ import DailyPnL from "../components/DailyPnL";
 import StatusBadge from "../components/StatusBadge";
 
 const s = dashboardData.stats;
+const wf = (dashboardData as Record<string, unknown>).walkForward as
+  { trainPF: number; testPF: number; retention: number; trainPeriod: string; testPeriod: string } | undefined;
 
 function StatCard({ label, value, sub }: { label: string; value: string; sub?: string }) {
   return (
@@ -51,29 +53,16 @@ function MonthlyTable() {
   );
 }
 
-function AccountCard({ name, type, current, target }: { name: string; type: string; status: string; current: number; target: number }) {
-  const color = type === "lucid" ? "text-purple-400" : "text-blue-400";
-  const bg = type === "lucid" ? "bg-purple-400" : "bg-blue-400";
-  const pct = target > 0 ? Math.min((current / target) * 100, 100) : 0;
-  const pnlColor = current > 0 ? "text-green-400" : current < 0 ? "text-red-400" : "text-gray-500";
+function AccountPill({ name, color }: { name: string; color: string }) {
   return (
-    <div className="bg-[#111] rounded-lg p-3 border border-[#222]">
-      <div className="flex justify-between items-center">
-        <span className={`text-sm font-medium ${color}`}>{name}</span>
-      </div>
-      <div className="mt-2 w-full bg-[#222] rounded-full h-1.5">
-        <div className={`${bg} h-1.5 rounded-full transition-all duration-500`} style={{ width: `${pct}%` }} />
-      </div>
-      <div className="flex justify-between mt-1">
-        <span className={`text-xs ${pnlColor}`}>${current.toLocaleString()}</span>
-        <span className="text-xs text-gray-600">/ ${target.toLocaleString()}</span>
-      </div>
+    <div className="bg-[#111] rounded-lg px-4 py-2 border border-[#222] text-center">
+      <span className={`text-sm font-medium ${color}`}>{name}</span>
     </div>
   );
 }
 
 export default function Home() {
-  const winRate = (s.winRate * 100).toFixed(1);
+  const winRate = (s.winRate * 100).toFixed(0);
 
   return (
     <main className="max-w-5xl mx-auto px-4 py-8">
@@ -88,9 +77,9 @@ export default function Home() {
 
       {/* Stats Grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-        <StatCard label="Profit Factor" value={`${s.pf}x`} sub="3.99x con tiers (WF 1.32)" />
-        <StatCard label="Tasa de acierto" value={`${winRate}%`} sub={`${s.tp}TP ${s.sl}SL ${s.pa}PA`} />
-        <StatCard label="P&L Total" value={`+${s.totalPnlTicks}t`} sub={`$${s.totalPnlUsd.toLocaleString()}`} />
+        <StatCard label="Profit Factor" value={`${s.pf}x`} />
+        <StatCard label="Tasa de acierto" value={`${winRate}%`} sub={`${s.tp} ganadas, ${s.sl} perdidas`} />
+        <StatCard label="P&L Total" value={`+${s.totalPnlTicks}t`} sub={`${s.entries} operaciones`} />
         <StatCard label="Operaciones" value={`${s.entries}`} sub={`${s.tradingDays} dias operados`} />
       </div>
 
@@ -100,6 +89,55 @@ export default function Home() {
         <StatCard label="Ganancia prom." value={`+${s.avgWin}t`} sub={`Perdida prom: ${s.avgLoss}t`} />
         <StatCard label="Periodo" value={`${s.dateFrom.slice(5)}`} sub={`al ${s.dateTo.slice(5)}`} />
       </div>
+
+      {/* Walk-Forward Validation */}
+      {wf && (
+        <div className="bg-[#111] rounded-xl p-4 border border-[#222] mb-6">
+          <h2 className="text-sm text-gray-400 mb-4 uppercase tracking-wider">Validacion Walk-Forward</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div className="text-center">
+              <div className="text-xs text-gray-500 mb-1">Entrenamiento ({wf.trainPeriod})</div>
+              <div className="text-xl font-bold text-yellow-400">PF {wf.trainPF}x</div>
+              <div className="text-xs text-gray-600">datos de entrenamiento</div>
+            </div>
+            <div className="text-center">
+              <div className="text-xs text-gray-500 mb-1">Test ({wf.testPeriod})</div>
+              <div className="text-xl font-bold text-green-400">PF {wf.testPF}x</div>
+              <div className="text-xs text-gray-600">datos que nunca vio el sistema</div>
+            </div>
+            <div className="text-center">
+              <div className="text-xs text-gray-500 mb-1">Retencion</div>
+              <div className="text-xl font-bold text-green-400">{wf.retention}%</div>
+              <div className="text-xs text-gray-600">test replica al entrenamiento</div>
+            </div>
+          </div>
+          <div className="border-t border-[#222] pt-3">
+            <h3 className="text-xs text-gray-500 uppercase mb-2">Sin Look-Ahead Bias</h3>
+            <ul className="text-xs text-gray-400 space-y-1.5">
+              <li className="flex items-start gap-2">
+                <span className="text-green-500 mt-0.5">&#10003;</span>
+                <span>Deteccion de patrones usa solo velas pasadas, la entry es en la vela actual</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-500 mt-0.5">&#10003;</span>
+                <span>Niveles calculados solo con data pre-sesion (PDH, PDL, Asia, Londres)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-500 mt-0.5">&#10003;</span>
+                <span>La simulacion arranca en la vela siguiente a la senal</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-500 mt-0.5">&#10003;</span>
+                <span>El periodo de test nunca se uso durante el desarrollo</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-green-500 mt-0.5">&#10003;</span>
+                <span>Data real de futuros MNQ via Rithmic (no CFD ni sinteticos)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
 
       {/* Equity Curve */}
       <div className="mb-6">
@@ -116,72 +154,21 @@ export default function Home() {
         <MonthlyTable />
       </div>
 
-      {/* Walk-Forward Validation */}
-      <div className="bg-[#111] rounded-xl p-4 border border-[#222] mb-6">
-        <h2 className="text-sm text-gray-400 mb-4 uppercase tracking-wider">Validacion Walk-Forward</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-          <div className="text-center">
-            <div className="text-xs text-gray-500 mb-1">Entrenamiento (Sep 2025 - Ene 2026)</div>
-            <div className="text-xl font-bold text-yellow-400">PF 2.98x</div>
-            <div className="text-xs text-gray-600">5 meses de datos de entrenamiento</div>
-          </div>
-          <div className="text-center">
-            <div className="text-xs text-gray-500 mb-1">Test (Feb - Mar 2026)</div>
-            <div className="text-xl font-bold text-green-400">PF 3.93x</div>
-            <div className="text-xs text-gray-600">datos que nunca vio el sistema</div>
-          </div>
-          <div className="text-center">
-            <div className="text-xs text-gray-500 mb-1">Ratio WF</div>
-            <div className="text-xl font-bold text-green-400">1.32</div>
-            <div className="text-xs text-gray-600">el test supera al entrenamiento</div>
-          </div>
-        </div>
-        <div className="border-t border-[#222] pt-3">
-          <h3 className="text-xs text-gray-500 uppercase mb-2">Sin Look-Ahead Bias</h3>
-          <ul className="text-xs text-gray-400 space-y-1.5">
-            <li className="flex items-start gap-2">
-              <span className="text-green-500 mt-0.5">&#10003;</span>
-              <span>Deteccion de patrones usa velas [i-3, i-2, i-1], la entry es en la vela i (regla j=i-2)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-500 mt-0.5">&#10003;</span>
-              <span>Niveles institucionales calculados solo con data pre-sesion (PDH, PDL, maximos/minimos de Asia y Londres)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-500 mt-0.5">&#10003;</span>
-              <span>La simulacion arranca en la vela i+1 (nunca en la misma barra que la senal)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-500 mt-0.5">&#10003;</span>
-              <span>El periodo de test (Feb-Mar) nunca se uso durante el desarrollo</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-500 mt-0.5">&#10003;</span>
-              <span>PF en test 3.93x &gt; PF en train 2.98x (el sistema mejora con datos nuevos)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-500 mt-0.5">&#10003;</span>
-              <span>Data real de futuros MNQ via Rithmic (no CFD ni sinteticos)</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
       {/* Accounts */}
       <div className="mb-6">
         <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Cuentas abiertas en Apex</h2>
         <div className="grid grid-cols-3 gap-3">
-          {dashboardData.accounts.filter((a: { type: string }) => a.type === "apex").map((a: { name: string; type: string; status: string; current: number; target: number }) => (
-            <AccountCard key={a.name} name={a.name} type={a.type} status={a.status} current={a.current} target={a.target} />
-          ))}
+          <AccountPill name="Apex 01" color="text-blue-400" />
+          <AccountPill name="Apex 02" color="text-blue-400" />
+          <AccountPill name="Apex 03" color="text-blue-400" />
         </div>
       </div>
       <div className="mb-8">
         <h2 className="text-sm text-gray-400 mb-3 uppercase tracking-wider">Cuentas abiertas en Lucid</h2>
         <div className="grid grid-cols-3 gap-3">
-          {dashboardData.accounts.filter((a: { type: string }) => a.type === "lucid").map((a: { name: string; type: string; status: string; current: number; target: number }) => (
-            <AccountCard key={a.name} name={a.name} type={a.type} status={a.status} current={a.current} target={a.target} />
-          ))}
+          <AccountPill name="Lucid 01" color="text-purple-400" />
+          <AccountPill name="Lucid 02" color="text-purple-400" />
+          <AccountPill name="Lucid 03" color="text-purple-400" />
         </div>
       </div>
 
