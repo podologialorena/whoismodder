@@ -17,3 +17,162 @@ body {
   color: var(--foreground);
   font-family: var(--font-mono), monospace;
 }
+
+.connected-node {
+  position: relative;
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.02),
+    0 0 24px rgb(16 185 129 / 0.04);
+}
+
+.connected-node::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 8px;
+  border: 1px solid rgb(16 185 129 / 0.16);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.flow-cable {
+  position: relative;
+  display: grid;
+  min-height: 44px;
+  place-items: center;
+}
+
+.flow-cable-line {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgb(52 211 153 / 0.85), transparent);
+  box-shadow: 0 0 18px rgb(52 211 153 / 0.28);
+}
+
+.flow-cable-pulse {
+  position: absolute;
+  left: calc(50% - 3px);
+  top: 0;
+  height: 6px;
+  width: 6px;
+  border-radius: 999px;
+  background: rgb(52 211 153);
+  box-shadow: 0 0 16px rgb(52 211 153 / 0.8);
+  opacity: 0;
+  animation: data-pulse-y 3.2s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+.account-stack {
+  position: relative;
+}
+
+@keyframes data-pulse-y {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  18%,
+  68% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(44px);
+  }
+}
+
+@keyframes data-pulse-x {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  16%,
+  72% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(86px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .flow-cable {
+    min-height: 1px;
+    transform: translateY(34px);
+  }
+
+  .flow-cable-line {
+    height: 2px;
+    left: 0;
+    right: 0;
+    top: 50%;
+    width: auto;
+    background: linear-gradient(to right, rgb(52 211 153 / 0.2), rgb(52 211 153 / 0.9), rgb(52 211 153 / 0.24));
+  }
+
+  .flow-cable-pulse {
+    left: 0;
+    top: calc(50% - 2px);
+    height: 4px;
+    width: 16px;
+    border-radius: 999px;
+    animation-name: data-pulse-x;
+  }
+
+  .account-stack {
+    padding-left: 38px;
+  }
+
+  .account-stack::before {
+    content: "";
+    position: absolute;
+    bottom: 36px;
+    left: 0;
+    top: 36px;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, rgb(52 211 153 / 0.8), transparent);
+    box-shadow: 0 0 18px rgb(52 211 153 / 0.22);
+  }
+
+  .account-stack::after {
+    content: none;
+  }
+
+  .account-branch {
+    position: relative;
+  }
+
+  .account-branch::before {
+    content: "";
+    position: absolute;
+    left: -38px;
+    top: 50%;
+    height: 2px;
+    width: 39px;
+    background: linear-gradient(to right, rgb(52 211 153 / 0.75), rgb(52 211 153 / 0.2));
+    box-shadow: 0 0 14px rgb(52 211 153 / 0.2);
+  }
+
+  .account-branch::after {
+    content: "";
+    position: absolute;
+    left: -42px;
+    top: calc(50% - 4px);
+    height: 8px;
+    width: 8px;
+    border-radius: 999px;
+    background: rgb(52 211 153);
+    box-shadow: 0 0 14px rgb(52 211 153 / 0.55);
+  }
+
+  .account-card {
+    position: relative;
+  }
+}
